@@ -10,7 +10,6 @@ A simple and responsive web application for embedding and managing mini web game
   - Add new games (name, image, URL)
   - Delete existing games
 - Uses SQLite to store game data
-- Responsive and mobile-friendly layout
 
 ## Technologies Used
 
