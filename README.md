@@ -1,48 +1,36 @@
 # embed-games
 
-A simple and responsive web application for embedding and managing mini web games. Built with Node.js, Express, SQLite, HTML, CSS, and JavaScript.
+A simple and responsive web application for embedding and managing mini web games using PHP and SQLite.
+
+🌐 Live site: [https://games.fklavye.net](https://games.fklavye.net)
+
+---
 
 ## Features
 
 - Embedded game player using `<iframe>`
 - Clickable game cards with thumbnails
 - Admin dashboard (password protected)
-  - Add new games (name, image, URL)
+  - Add new games (name, image path, URL)
   - Delete existing games
-- Uses SQLite to store game data
+- SQLite database for storing game data
+- Vanilla CSS and JavaScript
 
-## Technologies Used
+---
 
-- HTML
-- CSS (vanilla)
-- JavaScript (ES6)
-- Node.js
-- Express.js
+## Technologies
+
+- PHP
 - SQLite
+- HTML
+- CSS
+- JavaScript (ES6)
+
+---
 
 ## Admin Access
 
-- Visit the `/admin` route to access the admin dashboard.
-- Password is defined in `server.js`:
-
-```js
-const ADMIN_PASSWORD = 'your-password-here';
-```
-
-## 🚀 Setup Instructions
-
-Clone the repository and install dependencies:
-
-```bash
-# Clone the repository
-git clone https://github.com/TechnoKaa/embed-games.git
-cd embed-games
-
-# Install dependencies
-npm install
-
-# Start the development server
-npm start
-```
-
-Visit `http://localhost:3000` in your browser to view the site.
+- Visit: `/admin.php`
+- Password is set in `public/api/login.php`:
+  ```php
+  $ADMIN_PASSWORD = 'admin123'; // Change this in production
