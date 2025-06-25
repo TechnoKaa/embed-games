@@ -33,7 +33,7 @@ function createGameCards(games) {
 
 // Fetch games from the server and display them
 function fetchGames() {
-  fetch('/api/games')
+  fetch('/api/games.php')
     .then(response => {
       if (!response.ok) throw new Error('Failed to fetch games');
       return response.json();

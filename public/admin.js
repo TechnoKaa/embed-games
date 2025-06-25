@@ -30,7 +30,7 @@ function createGameCards(games) {
 }
 
 function fetchGames() {
-  fetch('/api/games', { credentials: 'same-origin' })
+  fetch('/api/games.php', { credentials: 'same-origin' })
     .then(res => res.json())
     .then(data => createGameCards(data.games))
     .catch(console.error);
@@ -45,7 +45,7 @@ function addGame(event) {
     image: form.image.value.trim(), // local path expected here
   };
 
-  fetch('/api/games', {
+  fetch('/api/games.php', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     credentials: 'same-origin',
@@ -63,7 +63,7 @@ function addGame(event) {
 }
 
 function deleteGame(id) {
-  fetch(`/api/games/${id}`, {
+  fetch(`/api/games.php?id=${id}`, {
     method: 'DELETE',
     credentials: 'same-origin',
   })
@@ -76,8 +76,8 @@ function deleteGame(id) {
 }
 
 function logout() {
-  fetch('/admin/logout', {
-    method: 'POST',
+  fetch('/api/login.php', {
+    method: 'DELETE',
     credentials: 'same-origin',
   })
     .then(() => {

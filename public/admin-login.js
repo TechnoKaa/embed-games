@@ -2,7 +2,7 @@ document.getElementById('loginForm').addEventListener('submit', event => {
   event.preventDefault();
   const password = document.getElementById('passwordInput').value;
 
-  fetch('/admin/login', {
+  fetch('api/login.php', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     credentials: 'same-origin', // IMPORTANT for session cookies
@@ -13,7 +13,7 @@ document.getElementById('loginForm').addEventListener('submit', event => {
       return res.json();
     })
     .then(() => {
-      window.location.href = '/admin'; // redirect to admin dashboard
+      window.location.href = '/admin.php'; // redirect to admin dashboard
     })
     .catch(err => alert(err.message));
 });

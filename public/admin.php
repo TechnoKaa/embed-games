@@ -1,12 +1,17 @@
+<?php
+session_start();
+if (!isset($_SESSION['isAdmin']) || !$_SESSION['isAdmin']) {
+    header("Location: /admin-login.html");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <title>Admin Dashboard</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
   <div class="container">
     <div class="admin-header">
@@ -26,5 +31,4 @@
 
   <script src="admin.js"></script>
 </body>
-
 </html>
