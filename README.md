@@ -31,6 +31,3 @@ A simple and responsive web application for embedding and managing mini web game
 ## Admin Access
 
 - Visit: `/admin.php`
-- Password is set in `public/api/login.php`:
-  ```php
-  $ADMIN_PASSWORD = 'admin123'; // Change this in production
