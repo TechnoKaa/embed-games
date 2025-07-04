@@ -13,8 +13,6 @@ if (file_exists($envPath)) {
     }
 }
 
-$ADMIN_PASSWORD = $_ENV['ADMIN_PASSWORD'] ?? 'admin123';
-
 switch ($_SERVER['REQUEST_METHOD']) {
   case 'POST':
     $input = json_decode(file_get_contents('php://input'), true);
