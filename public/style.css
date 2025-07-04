@@ -40,7 +40,8 @@ body {
 }
 
 #playground {
-  position: relative; /* needed for button positioning */
+  position: relative;
+  /* needed for button positioning */
 }
 
 #playground:hover #fullscreenBtn {
@@ -170,6 +171,26 @@ body {
   align-items: center;
   margin-bottom: 1.5rem;
 }
+
+.password-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-wrapper input {
+  flex: 1;
+  padding-right: 40px; /* space for icon */
+}
+
+.password-wrapper img.toggle-password {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+}
+
 
 /* Logout Button */
 #logoutBtn {

@@ -5,7 +5,7 @@ document.getElementById('loginForm').addEventListener('submit', event => {
   fetch('api/login.php', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    credentials: 'same-origin', // IMPORTANT for session cookies
+    credentials: 'same-origin',
     body: JSON.stringify({ password }),
   })
     .then(res => {
@@ -13,7 +13,18 @@ document.getElementById('loginForm').addEventListener('submit', event => {
       return res.json();
     })
     .then(() => {
-      window.location.href = '/admin.php'; // redirect to admin dashboard
+      window.location.href = '/admin.php';
     })
     .catch(err => alert(err.message));
+});
+
+// Toggle password visibility using image only
+const toggleBtn = document.getElementById('togglePassword');
+const passwordInput = document.getElementById('passwordInput');
+
+toggleBtn.addEventListener('click', () => {
+  const isPassword = passwordInput.type === 'password';
+  passwordInput.type = isPassword ? 'text' : 'password';
+  toggleBtn.src = isPassword ? 'images/show.png' : 'images/hide.png';
+  toggleBtn.alt = isPassword ? 'Hide Password' : 'Show Password';
 });
